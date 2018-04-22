@@ -22,9 +22,6 @@ public class ClientController {
 	@GetMapping("/hello")
 	public ResponseEntity<String> callGreetingServer() throws URISyntaxException {
 		String url="http://localhost:8080/rest/server/hello";
-		
-
-        URI uri = new URI( String.format( url, URLEncoder.encode(  "UTF8" ) ));
 		ResponseEntity<String > res = restTemplate.getForEntity(url, String.class);
 		return res;
 	}
